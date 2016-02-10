@@ -15,7 +15,9 @@ if (isset($nama, $email)) {
 
 $sql = @mysql_query("SELECT * FROM tamu");
 if (mysql_num_rows($sql) > 0) {
-	//$result = mysql_result($sql);
-	echo json_encode($sql);
+	$result = mysql_result($sql);
+	while ($row = mysql_fetch_array($result)) {
+		echo json_encode($row);
+	}
 }
 ?>
