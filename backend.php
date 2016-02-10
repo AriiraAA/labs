@@ -15,8 +15,15 @@ if (isset($nama, $email)) {
 
 $sql = @mysql_query("SELECT * FROM tamu");
 if (mysql_num_rows($sql) > 0) {
+	$html = '<table><thead><th>Nama</th><th>Email</th></thead>';
 	while ($row = mysql_fetch_array($sql)) {
-		echo json_encode($row);
+		$html .= "<tr>";
+		$html .= "<td>".$row->nama."</td>";
+		$html .= "<td>".$row->email."</td>";
+		$html .= "</tr>";
 	}
+
+	$html .= "</tbody></table>";
+	echo $html;
 }
 ?>
