@@ -18,8 +18,8 @@ if (mysql_num_rows($sql) > 0) {
 	$html = '<table><thead><th>Nama</th><th>Email</th></thead>';
 	while ($row = mysql_fetch_array($sql)) {
 		$html .= "<tr>";
-		$html .= "<td>".$row->nama."</td>";
-		$html .= "<td>".$row->email."</td>";
+		$html .= "<td>".$row["nama"]."</td>";
+		$html .= "<td>".$row["email"]."</td>";
 		$html .= "</tr>";
 	}
 
